@@ -1,23 +1,32 @@
 class Dog:
 
     # Class Attribute
-    species = 'mammal'
+    species = "mammal"
 
     # Initializer / Instance Attributes
-    def __init__(self, name, age):
+    def __init__(self, name="fido", age=1):
         self.name = name
         self.age = age
 
+    # instance method
+    def description(self):
+        return "{} is {} years old".format(self.name, self.age)
+
+    # instance method
+    def speak(self, sound):
+        return "{} says {}".format(self.name, sound)
+
 if __name__ == '__main__':
-    philo = Dog("Philo", 5)
-    mikey = Dog("Mikey", 6)
 
-    # Access the Dog object
-    print("{} is {} and {} is {}.".format(philo.name, philo.age, mikey.name, mikey.age))
+    mikey = Dog()
 
-    # Is Philo a mammal?
-    if philo.species == "mammal":
-        print("{0} is a {1}!".format(philo.name, philo.species))
+    # call our instance methods
+    print(mikey.description())
+    print(mikey.speak("Gruff Gruff"))
+    print(mikey.species)
+
+
+
 
 
 
